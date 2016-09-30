@@ -1,11 +1,382 @@
-@import "buttons"
+@import "mixins"
+
+$mainColor: #3e3e3e
+$white: #fff
+$black: #000
+$red: #ce2b37
+$green: #03b045
+$yellow: #f8e123
+$orange: #ff6816
+$orangeLight: #ea7d42
+$cyan: #15c0d7
+$blue: #0a8ee1
+
+strong
+  font-family: 'GothamPro-Medium', serif
+
+[class*="--text-white"]
+  color: $white
+
+[class*="--text-black"]
+  color: $black
+
+[class*="--text-red"]
+  color: $red
+
+[class*="--text-green"]
+  color: $green
+
+[class*="--text-yellow"]
+  color: $yellow
+
+[class*="--text-orange"]
+  color: $orange
+
+[class*="--text-orangeLight"]
+  color: $orangeLight
+
+[class*="--text-cyan"]
+  color: $cyan
+
+[class*="--text-blue"]
+  color: $blue
+  
+[class*="--text-upper"]
+  text-transform: uppercase
+
+[class*="--text-large"]
+  font-size: 38px
+
+[class*="--text-small"]
+  font-size: 13px
+  line-height: 1.2
+
+[class*="--block"]
+  display: block
+
+.uk-container
+  max-width: 1078px
 
 body
-  background: #eee
-  color: #000
+  font-family: 'GothamPro', serif
+  font-size: 16px
+  color: $mainColor
 
-h1
+.uk-button
+  font-family: 'GothamPro-Bold', serif
+  text-transform: uppercase
+  padding: 14px 24px 13px 23px
+  line-height: 1.3
+  font-size: 13.54px
+  +border-radius(3px)
+  +transition(all .3s ease-in-out)
   font-weight: normal
 
-p
-  background: #ccc
+.uk-button-primary
+  background-color: #ff6816
+
+  &:hover,
+  &:active
+    background: $orangeLight
+
+.uk-navbar
+  background: transparent
+
+.uk-navbar-brand
+  padding: 0
+  height: auto
+
+  &.logo
+    margin-left: 1px
+
+.uk-navbar-content
+  text-transform: uppercase
+  font-family: 'GothamPro-Medium', serif
+  font-size: 13px
+  max-width: 350px
+  line-height: 1.2
+  height: auto
+  letter-spacing: 0.2px
+  margin: 9px 0 0 9px
+
+.uk-navbar-flip
+  padding: 0
+  margin: 0
+
+  .uk-button
+    margin: 1px 2px 0 0
+
+.site-container
+  //width: 1380px
+  //margin-left: 100px
+  width: 100%
+  position: relative
+  overflow: hidden
+  min-width: 320px
+
+.main-header
+  background-color: $white
+  padding: 30px 0 28px 0
+
+.section
+  padding: 80px 0
+
+  &__title
+    color: $mainColor
+    font-size: 33px
+    font-family: 'Affect-Bold', serif
+    text-transform: uppercase
+    line-height: 1.2
+
+  &__text
+    line-height: 1.3
+    font-size: 16px
+
+.large-title
+  font-size: 33px
+  font-family: 'Affect-Bold', serif
+  line-height: 1.3
+
+.ws-wrap
+  padding: 0
+  background: #eeeef0
+  width: 100%
+  position: relative
+
+.ws
+  max-width: 1380px
+  margin: 0 auto
+  padding: 56px 0 0 0
+  background-image: url("../images/ws-bg.jpg")
+  background-size: cover
+  background-position: 0 bottom
+
+  .large-title > span
+    display: block
+    line-height: 1.2
+    margin-bottom: 1px
+
+  &__articles
+    display: block
+    font-size: 0
+    margin: 68px 0 0 0
+
+  &__article
+    font-size: 15px
+    display: inline-block
+    vertical-align: top
+    width: 190px
+    margin: 0 40px 0 0
+
+    > p
+      font-size: 15px
+      font-family: 'GothamPro-Medium', serif
+      margin-top: 28px
+      line-height: 1.2
+
+    > img
+      margin: 0 0 3px 5px
+
+    &:nth-child(2)
+      margin: 0 32px 0 0
+
+      > img
+        margin: 3px 0 3px 1px
+
+    &:nth-child(3)
+      margin: 0
+
+      > img
+        margin: 16px 0 0 1px
+
+  &__child-attract
+    width: 70.8%
+    background: $blue
+    margin-top: 90px
+    position: relative
+    text-align: right
+    padding: 30px 28px 32px 0
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+    &::before
+      position: absolute
+      content: ''
+      top: 0
+      height: 100%
+      width: 9000px
+      background: $blue
+      right: 100%
+      z-index: 1
+
+    &_img
+      position: absolute
+      top: -71px
+      left: -301px
+      z-index: 2
+
+    &_info
+      width: 487px
+      display: inline-block
+      text-align: left
+
+      > h2
+        font-size: 28px
+        color: $white
+        font-family: 'Affect-Bold', serif
+        font-weight: normal
+        text-transform: uppercase
+      > p
+        color: $white
+        font-family: 'GothamPro-Light', serif
+        line-height: 1.4
+        margin-top: 17px
+        letter-spacing: 0.07px
+
+    .uk-button
+      background-image: -moz-linear-gradient( 90deg, rgb(255,104,22) 0%, rgb(255,153,22) 100%)
+      background-image: -webkit-linear-gradient( 90deg, rgb(255,104,22) 0%, rgb(255,153,22) 100%)
+      background-image: -ms-linear-gradient( 90deg, rgb(255,104,22) 0%, rgb(255,153,22) 100%)
+      box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5)
+      margin: 3px 0 0 -7px
+      padding: 4px
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      font-size: 14px
+      color: $white
+      letter-spacing: 0.25px
+
+      > span
+        display: block
+        padding: 15px 20px 13px
+        border-radius: 3px
+        background-image: -moz-linear-gradient(90deg, rgb(255,171,22) -80%, rgb(255,115,22) 100%)
+        background-image: -webkit-linear-gradient(90deg, rgb(255,171,22) -80%, rgb(255,115,22) 100%)
+        background-image: -ms-linear-gradient(90deg, rgb(255,171,22) -80%, rgb(255,115,22) 100%)
+        box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.5)
+
+      &:hover,
+      &:active
+        > span
+          background-image: -moz-linear-gradient(90deg, rgb(255,171,22) 10%, rgb(255,115,22) 100%)
+          background-image: -webkit-linear-gradient(90deg, rgb(255,171,22) 10%, rgb(255,115,22) 100%)
+          background-image: -ms-linear-gradient(90deg, rgb(255,171,22) 10%, rgb(255,115,22) 100%)
+          box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.5)
+
+
+.wc-wrap
+  width: 100%
+  position: relative
+  padding: 0
+
+.wc
+  padding: 80px 0
+  max-width: 1380px
+  margin: 0 auto
+  background-image: url("../images/wc-bg.jpg")
+  background-repeat: no-repeat
+  background-position: 0 bottom
+  background-size: 100% 100%
+
+  .section__title
+    margin-bottom: 45px
+
+  .section__text + .section__text
+    margin-top: 30px
+
+  &__infos
+    font-size: 0
+    > div
+      display: inline-block
+      font-size: 16px
+      line-height: 1.4
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      vertical-align: top
+
+      &:first-child
+        width: calc(60% - 30px)
+        margin-right: 30px
+        padding: 40px 32px
+        background: $white
+
+      &:nth-child(2)
+        width: 40%
+        margin-top: 52px
+
+
+
+// Desktops and Tablets landscape mode
+@media only screen and (min-width: 960px) and (max-width: 1199px)
+
+// Desktops and Tablets landscape mode
+@media only screen and (max-width: 1074px)
+  .ws__child-attract
+    width: 100%
+    &_info
+      width: 100%
+
+      &::after
+        position: absolute
+        content: ''
+        top: 0
+        height: 100%
+        width: 25px
+        background: $blue
+        left: 100%
+        z-index: 1
+
+      &::after
+        width: 25px
+
+      .uk-button
+        margin-left: 0
+
+  .ws__child-attract_img
+    display: none
+
+// Tablets portrait
+@media only screen and (max-width: 959px)
+  .wc
+    background-image: none
+    background: #fff
+
+    &__infos
+      > div
+        display: block
+        width: 100%!important
+        margin: 40px 0 0 0!important
+        padding: 0!important
+
+@media only screen and (max-width: 781px)
+  .ws
+    &__articles
+      text-align: center
+    &__article
+      margin: 0 10px 40px 10px!important
+
+  .large-title
+    text-align: center
+
+  .uk-navbar-brand
+    &.logo
+      text-align: center
+      width: 100%
+
+  .uk-navbar-content
+    max-width: 100%
+    width: 100%
+    text-align: center
+    margin: 20px 0 0 0
+
+// Phones landscape
+@media only screen and (max-width: 767px)
+
+// Phones portrait
+@media only screen and (max-width: 479px)
+  .ws
+    &__article
+      margin: 0 0 40px 0!important
