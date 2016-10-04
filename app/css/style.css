@@ -3,8 +3,8 @@
 }
 
 .fri-plus {
-  background-image: url('../images/icons-sb4a983bf00.png');
-  background-position: 0 -238px;
+  background-image: url('../images/icons-sb1bbe950e7.png');
+  background-position: 0 -422px;
   background-repeat: no-repeat;
   overflow: hidden;
   display: inline-block;
@@ -14,8 +14,8 @@
 }
 
 .fri-minus {
-  background-image: url('../images/icons-sb4a983bf00.png');
-  background-position: 0 -209px;
+  background-image: url('../images/icons-sb1bbe950e7.png');
+  background-position: 0 -393px;
   background-repeat: no-repeat;
   overflow: hidden;
   display: inline-block;
@@ -25,7 +25,7 @@
 }
 
 .fri-phone {
-  background-image: url('../images/icons-sb4a983bf00.png');
+  background-image: url('../images/icons-sb1bbe950e7.png');
   background-position: 0 -182px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -36,7 +36,7 @@
 }
 
 .fri-marker {
-  background-image: url('../images/icons-sb4a983bf00.png');
+  background-image: url('../images/icons-sb1bbe950e7.png');
   background-position: 0 -147px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -47,7 +47,7 @@
 }
 
 .fri-clock {
-  background-image: url('../images/icons-sb4a983bf00.png');
+  background-image: url('../images/icons-sb1bbe950e7.png');
   background-position: 0 -78px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -58,7 +58,7 @@
 }
 
 .fri-check {
-  background-image: url('../images/icons-sb4a983bf00.png');
+  background-image: url('../images/icons-sb1bbe950e7.png');
   background-position: 0 -60px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -66,6 +66,28 @@
   vertical-align: middle;
   height: 13px;
   width: 16px;
+}
+
+.fri-warning {
+  background-image: url('../images/icons-sb1bbe950e7.png');
+  background-position: 0 -451px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  height: 28px;
+  width: 32px;
+}
+
+.fri-keys-bg {
+  background-image: url('../images/icons-sb1bbe950e7.png');
+  background-position: 0 -209px;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  height: 179px;
+  width: 179px;
 }
 
 strong {
@@ -210,7 +232,7 @@ body {
 }
 
 .uk-slidenav-previous {
-  background-image: url('../images/icons-sb4a983bf00.png');
+  background-image: url('../images/icons-sb1bbe950e7.png');
   background-position: 0 0;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -225,7 +247,7 @@ body {
 }
 
 .uk-slidenav-next {
-  background-image: url('../images/icons-sb4a983bf00.png');
+  background-image: url('../images/icons-sb1bbe950e7.png');
   background-position: 0 -30px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -266,7 +288,7 @@ body {
 
 .uk-close {
   opacity: 1;
-  background-image: url('../images/icons-sb4a983bf00.png');
+  background-image: url('../images/icons-sb1bbe950e7.png');
   background-position: 0 -112px;
   background-repeat: no-repeat;
   overflow: hidden;
@@ -337,6 +359,16 @@ body {
 }
 .section__imgs_single:nth-child(2n) {
   margin: 0 0 10px 5px;
+}
+.section__right_imgs {
+  font-size: 0;
+}
+.section__right_imgs > img {
+  font-size: 16px;
+  max-width: calc(50% - 20px);
+  margin: 10px 10px 10px 0;
+  width: 100%;
+  display: inline-block;
 }
 
 .large-title {
@@ -479,6 +511,13 @@ body {
   background: url("../images/wcs-bg.jpg");
   background-size: cover;
   background-position: 100% 100%;
+  position: relative;
+}
+.wcs-wrap .absolute-img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  max-width: 200px;
 }
 
 .wc-wrap {
@@ -523,6 +562,16 @@ body {
 .wc__infos > div:nth-child(2) {
   width: 40%;
   margin-top: 52px;
+}
+.wc__infos > div p {
+  overflow: hidden;
+}
+.wc__infos > div p i {
+  float: left;
+}
+.wc__infos > div p span {
+  float: right;
+  width: calc(100% - 50px);
 }
 
 .wor__img {
@@ -1165,6 +1214,32 @@ body {
   display: none;
 }
 
+.economy-b {
+  color: #fff;
+}
+.economy-b:before {
+  content: "";
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+}
+.economy-b p {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 19px;
+  font-family: "GothamPro-Bold", serif;
+  margin: 0;
+  padding: 10px 0 0 0;
+}
+.economy-b p strong {
+  display: block;
+  font-size: 30px;
+  margin: 20px 0 5px 0;
+}
+.economy-b p strong span {
+  font-size: 12px;
+}
+
 @media only screen and (max-width: 1074px) {
   .uk-modal-close {
     position: absolute;
@@ -1331,6 +1406,14 @@ body {
   .b_mInfo_delivery > img {
     margin: 20px auto 0;
     display: block;
+  }
+
+  .wcs-wrap .absolute-img {
+    display: none;
+  }
+
+  .economy-b {
+    display: none;
   }
 }
 @media only screen and (max-width: 501px) {

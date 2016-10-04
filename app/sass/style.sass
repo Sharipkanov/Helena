@@ -224,6 +224,15 @@ body
       &:nth-child(2n)
         margin: 0 0 10px 5px
 
+  &__right_imgs
+    font-size: 0
+    > img
+      font-size: 16px
+      max-width: calc(50% - 20px)
+      margin: 10px 10px 10px 0
+      width: 100%
+      display: inline-block
+
 .large-title
   font-size: 33px
   font-family: 'Affect-Bold', serif
@@ -364,6 +373,13 @@ body
   background: url("../images/wcs-bg.jpg")
   background-size: cover
   background-position: 100% 100%
+  position: relative
+
+  .absolute-img
+    position: absolute
+    right: 0
+    top: 0
+    max-width: 200px
 
 
 .wc-wrap
@@ -407,6 +423,15 @@ body
       &:nth-child(2)
         width: 40%
         margin-top: 52px
+
+      p
+        overflow: hidden
+
+        i
+          float: left
+        span
+          float: right
+          width: calc(100% - 50px)
 
 
 .wor
@@ -1055,6 +1080,31 @@ body
         &.uk-active
           display: none
 
+.economy-b
+  color: $white
+
+  &:before
+    content: ''
+    vertical-align: middle
+    display: inline-block
+    height: 100%
+
+  p
+    display: inline-block
+    vertical-align: middle
+    font-size: 19px
+    font-family: 'GothamPro-Bold', serif
+    margin: 0
+    padding: 10px 0 0 0
+
+    strong
+      display: block
+      font-size: 30px
+      margin: 20px 0 5px 0
+
+      span
+        font-size: 12px
+
 // Desktops and Tablets landscape mode
 @media only screen and (max-width: 1074px)
   .uk-modal-close
@@ -1113,7 +1163,6 @@ body
         width: 100%!important
         margin: 40px 0 0 0!important
         padding: 0!important
-
 
   .b_footer
 
@@ -1216,6 +1265,14 @@ body
   .b_mInfo_delivery > img
     margin: 20px auto 0
     display: block
+
+  .wcs-wrap
+
+    .absolute-img
+      display: none
+
+  .economy-b
+    display: none
 
 
 @media only screen and (max-width: 501px)
