@@ -835,6 +835,7 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   border: 1px solid #d6d6d6;
+  height: 53px;
 }
 .b_mForm .uk-form-row button[type=submit] {
   width: 100%;
