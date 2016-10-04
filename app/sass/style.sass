@@ -54,6 +54,15 @@ strong
 [class*="--block"]
   display: block
 
+[class*="--bg-green"]
+  background: $green
+
+[class*="--bg-blue"]
+  background: $blue
+
+[class*="--text-cap"]
+  text-transform: capitalize!important
+
 .uk-container
   max-width: 1078px
 
@@ -182,6 +191,19 @@ body
       font-size: 18px
       font-family: 'GothamPro-Medium', serif
       text-transform: uppercase
+
+  &__imgs
+    font-size: 0
+
+    &_single
+      font-size: 16px
+      display: inline-block
+      max-width: 181px
+      width: calc(50% - 10px)
+      margin: 0 5px 10px 0
+
+      &:nth-child(2n)
+        margin: 0 0 10px 5px
 
 .large-title
   font-size: 33px
@@ -324,6 +346,7 @@ body
   background-size: cover
   background-position: 100% 100%
 
+
 .wc-wrap
   width: 100%
   position: relative
@@ -366,6 +389,85 @@ body
         width: 40%
         margin-top: 52px
 
+
+.wor
+  &__img
+    margin-left: 30px
+
+  &__boxes
+    > div
+      margin: 20px 10px 0 0
+      padding: 15px
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+      display: inline-block
+      width: 45%
+
+      > p
+        margin: 0
+        font-size: 14px
+        color: $black
+
+        strong
+          display: block
+          margin-top: 15px
+          font-family: "GothamPro-Bold", serif
+          font-size: 30px
+
+          span
+            font-size: 12px
+            text-transform: uppercase
+
+      &:first-child
+        border: 1px solid $red
+
+      &:last-child
+        border: 1px solid $yellow
+        margin: 20px 0 0 0
+
+  &__circle
+    width: 120px
+    height: 120px
+    border-radius: 50%
+    text-align: center
+    font-size: 0
+    margin: 30px 0
+
+    > p
+      display: inline-block
+      vertical-align: middle
+      font-size: 14px
+
+      > span
+        display: block
+        font-size: 14px
+        margin-top: 10px
+
+      > strong
+        margin-top: 10px
+        font-family: 'GothamPro-Bold', serif
+        font-size: 30px
+        display: block
+        
+        span
+          font-size: 14px
+          text-transform: uppercase
+          font-family: 'GothamPro', serif
+
+    &:before
+      display: inline-block
+      vertical-align: middle
+      height: 100%
+      content: ''
+
+    &:first-child
+      border: 2px solid $blue
+      color: $blue
+
+    &:last-child
+      border: 2px solid $green
+      color: $green
 
 .wcp
   .inline-boxes
@@ -453,6 +555,7 @@ body
   background: url("../images/wk-bg.jpg")
   background-position: 0 100%
   background-repeat: no-repeat
+
 
 .attention-block
   padding: 20px 0
@@ -564,6 +667,90 @@ body
     li
       font-size: 12px
 
+
+.b_footer
+  &__top
+    position: relative
+    z-index: 2
+    margin-bottom: -40px
+
+    .uk-container
+      font-size: 0
+
+  &__bottom
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+    padding: 60px 0
+    background: $orangeLight
+    position: relative
+    z-index: 1
+
+  &__infos
+    width: 50%
+    font-size: 16px
+    display: inline-block
+    vertical-align: bottom
+    margin-bottom: 70px
+    text-align: right
+
+    a
+      margin-left: 20px
+
+    .uk-button
+      border: 2px solid $green
+      background: transparent
+      color: $green
+      +border-radius(30px)
+
+      &:hover
+        color: $white
+        background: $green
+
+    &_phone
+      color: $black
+      text-decoration: none
+      font-size: 22px
+
+      &:hover
+        text-decoration: none
+
+  &__circles
+    vertical-align: top
+    display: inline-block
+    width: 50%
+    font-size: 0
+
+    &_circle
+      font-size: 0
+      border-radius: 50%
+      text-align: center
+      width: 230px
+      height: 230px
+      display: inline-block
+      position: relative
+      vertical-align: top
+
+      &:before
+        content: ''
+        height: 100%
+        vertical-align: middle
+        display: inline-block
+
+      >
+        span
+          display: inline-block
+          vertical-align: middle
+          font-size: 14px
+
+          strong
+            font-family: 'GothamPro-Bold', serif
+
+      &:first-child
+        margin-right: -30px
+        z-index: 1
+
+
 // Desktops and Tablets landscape mode
 @media only screen and (min-width: 960px) and (max-width: 1199px)
 
@@ -595,6 +782,21 @@ body
 
 // Tablets portrait
 @media only screen and (max-width: 959px)
+  .section__text
+    &_mobBoxed
+      background: rgba(255,255,255,.7)
+      padding: 10px
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
+
+  .attention-block
+    background: rgba(255,255,255,.7)
+    padding: 10px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
   .wc
     background-image: none
     background: #fff
@@ -605,6 +807,27 @@ body
         width: 100%!important
         margin: 40px 0 0 0!important
         padding: 0!important
+
+
+  .b_footer
+
+    &__infos
+      width: 100%
+      text-align: center
+      margin-top: 20px
+
+    &__circles
+      width: 100%
+      text-align: center
+
+@media only screen and (max-width: 856px)
+  .wor
+    &__img
+      display: none
+
+    &__circle
+      margin: 0 0 30px 0
+      display: inline-block
 
 @media only screen and (max-width: 781px)
   .ws
@@ -652,8 +875,52 @@ body
       display: block
       width: 100%
 
+  .section__imgs
+    font-size: 0
+
+    &_single
+      width: calc(25% - 30px)
+
+      &:nth-child(2n)
+        margin: 0 5px 10px 0
+
+  .b_footer__bottom
+    p, a
+      text-align: left
+
+
+@media only screen and (max-width: 501px)
+  .b_footer
+
+    &__infos
+      width: 100%
+      text-align: center
+      margin-top: 20px
+
+      a
+        margin-bottom: 20px
+        display: inline-block
+
+    &__circles
+      width: 100%
+      text-align: center
+
+      &_circle
+        display: block
+        margin: 20px auto!important
+        text-align: center
+
 // Phones portrait
 @media only screen and (max-width: 479px)
+  .section__imgs
+    font-size: 0
+
+    &_single
+      width: calc(50% - 10px)
+
+      &:nth-child(2n)
+        margin: 0 5px 10px 0
+
   .ws
     &__article
       margin: 0 0 40px 0!important
