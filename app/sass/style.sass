@@ -125,6 +125,7 @@ body
 
 .uk-slidenav-previous
   +sprite(arrow-left)
+  left: 0!important
   display: inline-block
 
   &::before
@@ -132,6 +133,7 @@ body
 
 .uk-slidenav-next
   +sprite(arrow-right)
+  right: 0!important
   &::before
     content: ''
 
@@ -1222,12 +1224,35 @@ body
 
 // Phones landscape
 @media only screen and (max-width: 767px)
+  .section
+    &.wor
+      padding: 20px 0
+    &.wcp
+      padding: 0
+    &.wr
+      padding: 20px 0
+
+  .wc
+    padding: 20px 0
+
+  .wor
+    &__circles
+      text-align: center
+
+    &__circle
+      margin: 10px 40px
+
+    &__boxes
+      > div
+        width: calc(50% - 10px)
+
   .wss
     font-size: 0
 
   .inline-boxes
     > div
       display: block
+      margin: 0 auto
       width: 100%
 
   .section__imgs
@@ -1274,6 +1299,30 @@ body
   .economy-b
     display: none
 
+  .choose-one-article
+    padding: 45px 3px 0 3px
+
+  .uk-slideset-nav
+    margin-top: 20px
+
+    .uk-dotnav
+      margin-top: 10px
+
+  .uk-slidenav-position
+    .uk-slidenav
+      display: none!important
+
+  .b_mInfo
+    &__switcher_content
+      > img
+        display: block
+        float: none
+        margin: 0 auto
+      > div
+        float: none
+        display: block
+        width: 100%
+        margin: 10px 0
 
 @media only screen and (max-width: 501px)
   .b_footer

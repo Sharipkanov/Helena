@@ -2,8 +2,17 @@
   "delivery": 500,
   "build": 2000,
   "items": {
-    "base": 10270,
-    "le": 13530,
-    "xle": 16780
+    "base": {
+      "price": 10270,
+      "name": "base"
+    },
+    "le": {
+      "price": 13530,
+      "name": "le"
+    },
+    "xle": {
+      "price": 16780,
+      "name": "xle"
+    }
   }
 }

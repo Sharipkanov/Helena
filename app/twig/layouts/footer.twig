@@ -21,12 +21,13 @@
                 </div>
                 <div class="uk-width-small-1-1 uk-width-medium-2-5">
                     <form action="" class="b_mForm">
+                        <input type="hidden" name="name" value="Заказ обратного звонка">
                         <h3 class="b_mForm__title">Закажите обрытный звонок <small>и мы перезвоним в течении 5 минут</small></h3>
                         <div class="uk-form-row">
-                            <input type="text" name="" id="" placeholder="Имя*" required>
+                            <input type="text" name="fullname" placeholder="Имя*" required>
                         </div>
                         <div class="uk-form-row">
-                            <input type="text" name="" id="" placeholder="Телефон*" required>
+                            <input type="text" name="phone" placeholder="Телефон*" class="phone-input" required>
                         </div>
                         <div class="uk-form-row">
                             <button class="uk-button uk-button-primary" type="submit">ЗАКАЗАТЬ ЗВОНОК!</button>
@@ -77,16 +78,22 @@
                 </div>
                 <div class="uk-width-small-1-1 uk-width-medium-2-5">
                     <form action="" class="b_mForm">
+                        <input type="hidden" name="name" value="Заказ покупки товара">
+                        <input type="hidden" name="totalPrice" value="">
+                        <input type="hidden" name="delivery" value="Нет">
+                        <input type="hidden" name="build" value="Нет">
+                        <input type="hidden" name="product" value="">
+
                         <h3 class="b_mForm__title"><span class="--text-upper">Форма заказа <br> KAMPFER HELENA (WALL)</span></h3>
                         <div class="uk-form-row">
-                            <input type="text" name="" id="" placeholder="Имя*" required>
+                            <input type="text" name="fullname" placeholder="Имя*" required>
                         </div>
                         <div class="uk-form-row">
-                            <input type="text" name="" id="" placeholder="Телефон*" required>
+                            <input type="text" name="phone" placeholder="Телефон*" class="phone-input" required>
                         </div>
                         <div class="uk-form-row price-calc uk-text-right">
                             <div>
-                                <p><i id="item-price" style="font-style: normal;"></i> x <input type="text" value="1" class="calcPriceInput"> = <strong id="calc-price">16 780</strong> <span>РУБ.</span></p>
+                                <p><i id="item-price" style="font-style: normal;"></i> x <input type="text" name="count" value="1" class="calcPriceInput"> = <strong id="calc-price"></strong> <span>РУБ.</span></p>
                             </div>
                             <div class="uk-text-right"><p>+<i id="delivery-price">0</i> <span>РУБ.</span></p></div>
                             <div class="uk-text-right"><p>+<i id="build-price">0</i> <span>РУБ.</span></p></div>

@@ -6,6 +6,26 @@ var allPrices = {},
     buildPrice = 0;
 
 $(document).ready(function () {
+    $('.phone-input').mask('+7 (000) 000-0000');
+
+    $('.b_mForm').submit(function (e) {
+        e.preventDefault();
+
+        var that = $(this),
+            form = e.target,
+            serialized = serializeForm(form),
+            url = '/mail.php';
+
+        $.post(url, serialized, function(response) {
+            console.log(typeof response);
+            if(response === '1') {
+                $('.uk-modal-close.uk-close').click();
+            }
+        });
+
+        return false;
+    });
+
     $.get('/prices.json', function (data) {
         allPrices = data;
 
@@ -30,12 +50,15 @@ $(document).ready(function () {
 
         var dataAttr = this.dataset.buy;
 
-        itemPrice = allPrices.items[dataAttr];
+        itemPrice = allPrices.items[dataAttr]['price'];
         totalPrice = itemPrice;
         updateTotalPrice(totalPrice);
         insertItemPrice(itemPrice);
-        itemCalcPrice = allPrices.items[dataAttr];
+        itemCalcPrice = itemPrice;
         updateCalcPrice(itemCalcPrice);
+
+        $('.calcPriceInput').val(1);
+        $('[name="product"]').val(allPrices.items[dataAttr]['name']);
     });
 
     $('[data-btn-to-delivery]').click(function (e) {
@@ -72,30 +95,33 @@ $(document).ready(function () {
 function appendPrices() {
     $('.price-delivery').text(allPrices.delivery);
     $('.price-build').text(allPrices.build);
-    $('.price-base').text(allPrices.items.base);
-    $('.price-le').text(allPrices.items.le);
-    $('.price-xle').text(allPrices.items.xle);
+    $('.price-base').text(allPrices.items.base.price);
+    $('.price-le').text(allPrices.items.le.price);
+    $('.price-xle').text(allPrices.items.xle.price);
 }
 
 function checkDelivery() {
     $('[data-btn-to-delivery]').each(function (e) {
         var that = $(this),
             data = that.data('btn-to-delivery'),
-            delivery = $('#delivery-price');
+            delivery = $('#delivery-price'),
+            input = $('[name="delivery"]');
 
-         if(that.hasClass('active')) {
-             if(data === 'yes') {
-                 delivery.text(allPrices.delivery);
-                 totalPrice += allPrices.delivery;
-                 deliveryPrice = allPrices.delivery;
-                 updateTotalPrice(totalPrice);
-             } else {
-                 delivery.text('0');
-                 totalPrice -= allPrices.delivery;
-                 deliveryPrice = 0;
-                 updateTotalPrice(totalPrice);
-             }
-         }
+        if(that.hasClass('active')) {
+            if(data === 'yes') {
+                delivery.text(allPrices.delivery);
+                totalPrice += allPrices.delivery;
+                deliveryPrice = allPrices.delivery;
+                updateTotalPrice(totalPrice);
+                input.val('Да');
+            } else {
+                delivery.text('0');
+                totalPrice -= allPrices.delivery;
+                deliveryPrice = 0;
+                updateTotalPrice(totalPrice);
+                input.val('Нет');
+            }
+        }
     });
 }
 
@@ -103,7 +129,8 @@ function checkBuild() {
     $('[data-btn-to-build]').each(function (e) {
         var that = $(this),
             data = that.data('btn-to-build'),
-            build = $('#build-price');
+            build = $('#build-price'),
+            input = $('[name="build"]');
 
         if(that.hasClass('active')) {
             if(data === 'yes') {
@@ -111,24 +138,67 @@ function checkBuild() {
                 totalPrice += allPrices.build;
                 buildPrice = allPrices.build;
                 updateTotalPrice(totalPrice);
+                input.val('Да');
             } else {
                 build.text('0');
                 totalPrice -= allPrices.build;
                 buildPrice = 0;
                 updateTotalPrice(totalPrice);
+                input.val('Нет');
             }
         }
     });
 }
 
 function updateTotalPrice($totalPrice) {
-    $('#total-price').text($totalPrice)
+    $('#total-price').text($totalPrice);
+    $('[name="totalPrice"]').val($totalPrice);
 }
 
 function insertItemPrice($price) {
-    $('#item-price').text($price)
+    $('#item-price').text($price);
 }
 
 function updateCalcPrice($price) {
-    $('#calc-price').text($price)
+    $('#calc-price').text($price);
+}
+
+// Clear Form
+function clearForm($form) {
+    for(var i=0; i<$form.length - 1; i++) {
+        if($form[i].type === 'checkbox') $form[i].checked = false;
+        else $form[i].value = "";
+    }
+
+}
+
+// Serialize Form
+function serializeForm($form) {
+    var returnObject = {},
+
+        tempMeta = {}, hasMeta = false;
+
+    for(var i=0; i<$form.length; i++) {
+
+        if($form[i].type !== 'submit' && $form[i].name !== 'thumbnail' && $form[i].name !== '') {
+            var tempName = $form[i].name.toString(),
+                tempVal = $form[i].value;
+
+            if(tempName.indexOf('meta') !== -1) {
+                var meta = tempName.split('.');
+
+                hasMeta = true;
+                tempMeta[meta[1]] = tempVal;
+            } else returnObject[tempName] = tempVal;
+
+            if($form[i].type === 'checkbox') {
+                if($form[i].checked === true) returnObject[tempName] = 1;
+                else returnObject[tempName] = 0;
+            }
+        }
+    }
+
+    if(hasMeta) returnObject['meta'] = tempMeta;
+
+    return returnObject;
 }
