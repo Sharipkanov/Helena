@@ -686,6 +686,13 @@ body
     position: relative
     z-index: 1
 
+    a
+      text-decoration: underline
+
+      &:hover
+        color: $white
+
+
   &__infos
     width: 50%
     font-size: 16px
@@ -751,8 +758,73 @@ body
         z-index: 1
 
 
-// Desktops and Tablets landscape mode
-@media only screen and (min-width: 960px) and (max-width: 1199px)
+.b_akcyi
+  margin-bottom: 20px
+  background: $orange
+  padding: 20px 0
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  font-size: 0
+
+  &_content
+    font-size: 16px
+    width: calc(100% - 234px)
+    display: inline-block
+
+  &_button
+    width: 204px
+    margin-left: 30px
+    display: inline-block
+    font-size: 16px
+
+  .uk-button
+    background: transparent
+    color: $white
+    border: 2px solid $white
+    width: 200px
+    text-align: center
+
+    &:hover
+      background: $white
+      color: $orange
+
+.b_mForm
+  box-shadow: 0px 5px 5px 0px rgba(1, 1, 1, 0.33)
+  padding: 35px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+
+  &__title
+    font-size: 21px
+    color: $black
+    font-family: 'GothamPro', serif
+    text-align: center
+
+    small
+      font-size: 16px
+      display: block
+
+  .uk-form-row
+    text-align: center
+
+    input
+      max-width: 280px
+      width: 100%
+      margin: 0 auto
+      padding: 0 15px
+      border: 1px solid #d6d6d6
+
+    button[type=submit]
+      width: 100%
+
+.b_mInfo
+  box-shadow: 0px 5px 5px 0px rgba(1, 1, 1, 0.33)
+  padding: 35px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
 
 // Desktops and Tablets landscape mode
 @media only screen and (max-width: 1074px)
@@ -887,6 +959,19 @@ body
   .b_footer__bottom
     p, a
       text-align: left
+
+  .b_akcyi
+
+    &_content
+      display: block
+      width: 100%
+      text-align: center
+
+    &_button
+      text-align: center
+      margin: 20px 0
+      display: block
+      width: 100%
 
 
 @media only screen and (max-width: 501px)
