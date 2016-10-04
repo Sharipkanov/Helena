@@ -40,6 +40,9 @@ var sources = {
         watch: 'app/sass/**/*.sass',
         dist: 'app/sass'
     },
+    image: {
+        src: 'app/images'
+    },
     bower: {src: 'app/bower_components'}
 };
 
@@ -87,7 +90,8 @@ gulp.task('compass', function () {
       .pipe(compass({
           sass: sources.sass.dist,
           css: sources.css.dist,
-          js: sources.js.dist
+          js: sources.js.dist,
+          image: sources.image.src
       }))
       .pipe(gulp.dest(sources.css.dist))
       .pipe(connect.reload());

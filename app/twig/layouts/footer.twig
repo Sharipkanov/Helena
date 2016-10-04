@@ -9,9 +9,9 @@
                         <h3 class="b_mInfo__title">Связаться с нами</h3>
                         <div class="b_mInfo__content">
                             <div>
-                                <p><i></i> <span>8-800-707-98-97</span></p>
-                                <p><i></i> <span>Мы находимся по адресу: <br> м. Тульская, Холодильный пер., дом 3, <br> ТЦ Ролл Холл, пав. 119-120</span></p>
-                                <p><i></i> <span>Время работы: <br> с 10:00 до 19:00</span></p>
+                                <p class="b_mInfo__content_phone uk-clearfix"><i class="fri fri-phone"></i> <span>8-800-707-98-97</span></p>
+                                <p class="b_mInfo__content_text uk-clearfix"><i class="fri fri-marker"></i> <span>Мы находимся по адресу: <strong>м. Тульская, Холодильный пер., дом 3,</strong> ТЦ Ролл Холл, пав. 119-120</span></p>
+                                <p class="b_mInfo__content_text uk-clearfix"><i class="fri fri-clock"></i> <span>Время работы: <br> с 10:00 до 19:00</span></p>
                             </div>
                         </div>
                         <div class="b_mInfo__footer">
@@ -33,6 +33,115 @@
                         </div>
                         <p class="b_mForm__info">Ваши контактные данные в безопасности <br>и не будут переданы третьим лицам</p>
                     </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Prices modal -->
+<div id="buy-product" class="uk-modal">
+    <div class="uk-modal-dialog uk-modal-dialog-large">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-large uk-grid-match" data-uk-grid-margin>
+                <div class="uk-width-small-1-1 uk-width-medium-3-5">
+                    <div class="b_mInfo">
+                        <div class="b_mInfo__switcher">
+                            <div class="b_mInfo__switcher_content">
+                                <img src="images/switcher-img-1.png" alt="">
+                                <div>
+                                    <h4>Вам потребуется доставка?</h4>
+                                    <p>Мы готовы доставить товар вам на дом. <br> Стоимость – <span class="price-delivery"></span> рублей в пределах МКАД.</p>
+                                </div>
+                            </div>
+                            <div class="b_mInfo__switcher_btns">
+                                <a href="#" class="uk-button uk-button-primary" data-btn-to-delivery="yes"><i class="fri fri-check"></i> ДА</a>
+                                <a href="#" class="uk-button uk-button-primary active" data-btn-to-delivery="no">НЕТ</a>
+                            </div>
+                        </div>
+                        <div class="b_mInfo__switcher">
+                            <div class="b_mInfo__switcher_content">
+                                <img src="images/switcher-img-2.png" alt="">
+                                <div>
+                                    <h4>Вам потребуется сборка?</h4>
+                                    <p>Мы готовы полностью собрать и устaановить <br>комплекс. Стоимость – <span class="price-build"></span> рублей</p>
+                                </div>
+                            </div>
+                            <div class="b_mInfo__switcher_btns">
+                                <a href="#" class="uk-button uk-button-primary" data-btn-to-build="yes"><i class="fri fri-check"></i> ДА</a>
+                                <a href="#" class="uk-button uk-button-primary active" data-btn-to-build="no">НЕТ</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-width-small-1-1 uk-width-medium-2-5">
+                    <form action="" class="b_mForm">
+                        <h3 class="b_mForm__title"><span class="--text-upper">Форма заказа <br> KAMPFER HELENA (WALL)</span></h3>
+                        <div class="uk-form-row">
+                            <input type="text" name="" id="" placeholder="Имя*" required>
+                        </div>
+                        <div class="uk-form-row">
+                            <input type="text" name="" id="" placeholder="Телефон*" required>
+                        </div>
+                        <div class="uk-form-row price-calc uk-text-right">
+                            <div>
+                                <p><i id="item-price" style="font-style: normal;"></i> x <input type="text" value="1" class="calcPriceInput"> = <strong id="calc-price">16 780</strong> <span>РУБ.</span></p>
+                            </div>
+                            <div class="uk-text-right"><p>+<i id="delivery-price">0</i> <span>РУБ.</span></p></div>
+                            <div class="uk-text-right"><p>+<i id="build-price">0</i> <span>РУБ.</span></p></div>
+                            <div class="uk-text-right"><p class="total">Итого: <strong id="total-price"></strong> <span>РУБ.</span></p></div>
+                        </div>
+                        <div class="uk-form-row">
+                            <button class="uk-button uk-button-primary" type="submit">КУПИТЬ</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delivery modal -->
+<div id="delivery" class="uk-modal">
+    <div class="uk-modal-dialog uk-modal-dialog-large">
+        <a class="uk-modal-close uk-close"></a>
+        <div class="uk-container uk-container-center">
+            <div class="uk-grid uk-grid-small uk-grid-match" data-uk-grid-margin>
+                <div class="uk-width-small-1-1 uk-width-medium-1-2">
+                    <div class="b_mInfo_delivery">
+                        <img src="images/switcher-img-1.png" alt="">
+                        <ul id="delivery-switcher" class="uk-switcher">
+                            <li>
+                                <h4 class="b_mInfo_delivery__title">Доставка по Москве <small>и в пределах 5 км от МКАД</small></h4>
+                                <p class="b_mInfo_delivery__price --text-orange"><i class="price-delivery" style="font-style: normal;"></i> <span>РУБ.</span></p>
+                            </li>
+                            <li>
+                                <h4 class="b_mInfo_delivery__title">Доставка в регионы России</h4>
+                                <p class="b_mInfo_delivery__text">Товар будет вам доставлен транспортной компанией. Стоимость зависит от удаленности вашего региона. Доставка до терминала транспортной компании в Москве - бесплатно</span></p>
+                            </li>
+                            <li>
+                                <h4 class="b_mInfo_delivery__title">Самовывоз</h4>
+                                <div class="b_mInfo_delivery__address uk-clearfix"><i class="fri fri-marker"></i> <span>Мы находимся по адресу: <br> м. Тульская, Холодильный пер., дом 3, <br> ТЦ Ролл Холл, пав. 119-120</span></div>
+                            </li>
+                        </ul>
+                        <ul class="b_mInfo_delivery_footer" data-uk-switcher="{connect:'#delivery-switcher', animation: 'fade'}">
+                            <li><a href="">Доставка по Москве</a></li>
+                            <li><a href="">Доставка в регионы России</a></li>
+                            <li><a href="">Самовывоз</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="uk-width-small-1-1 uk-width-medium-1-2">
+                    <div class="b_mInfo_delivery bg-blue">
+                        <img src="images/switcher-img-2.png" alt="">
+                        <h4 class="b_mInfo_delivery__title --text-white">Сборка и установка <small>Сборка осуществляется в день доставки</small></h4>
+                        <p class="b_mInfo_delivery__price --text-white"><i class="price-build" style="font-style: normal;"></i> <span>РУБ.</span></p>
+
+                        <ul class="b_mInfo_delivery_footer">
+                            <li class="--text-white">Закажите сборку на странице оформление заказа</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>

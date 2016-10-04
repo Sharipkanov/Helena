@@ -1,4 +1,5 @@
 @import "mixins"
+@import "icons"
 
 $mainColor: #3e3e3e
 $white: #fff
@@ -84,6 +85,9 @@ body
 .uk-button-primary
   background-color: #ff6816
 
+  &:visited
+    background-color: #ff6816
+
   &:hover,
   &:active
     background: $orangeLight
@@ -120,18 +124,14 @@ body
   top: 60px
 
 .uk-slidenav-previous
-  background: url("../images/arrow-left.png")
+  +sprite(arrow-left)
   display: inline-block
-  width: 40px
-  height: 25px
 
   &::before
     content: ''
 
 .uk-slidenav-next
-  background: url("../images/arrow-right.png")
-  width: 40px
-  height: 25px
+  +sprite(arrow-right)
   &::before
     content: ''
 
@@ -152,7 +152,26 @@ body
     > p
       margin-bottom: 50px
 
+.uk-modal-dialog
+  padding: 80px 40px
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  min-width: 320px
 
+.uk-close
+  opacity: 1
+  +sprite(icon-close)
+
+  &:after
+    display: none
+
+.uk-modal-close
+  position: absolute
+  right: -21px
+  top: 10px
+
+    
 .site-container
   //width: 1380px
   //margin-left: 100px
@@ -789,9 +808,10 @@ body
       background: $white
       color: $orange
 
+
 .b_mForm
   box-shadow: 0px 5px 5px 0px rgba(1, 1, 1, 0.33)
-  padding: 35px
+  padding: 30px
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
@@ -806,6 +826,12 @@ body
       font-size: 16px
       display: block
 
+  &__info
+    font-size: 12px
+    text-align: center
+    color: $black
+    font-family: 'GothamPro', serif
+
   .uk-form-row
     text-align: center
 
@@ -816,19 +842,226 @@ body
       padding: 0 15px
       border: 1px solid #d6d6d6
       height: 53px
+      color: #5d5d5d
+      font-family: 'GothamPro-Light', serif
+      font-size: 14px
+      outline: none
+      -webkit-box-sizing: border-box
+      -moz-box-sizing: border-box
+      box-sizing: border-box
 
     button[type=submit]
       width: 100%
+      padding: 0
+      line-height: 53px
+      text-align: center
+
+  .price-calc
+    margin-top: 20px
+    
+    i
+      font-style: normal
+
+    input
+      display: inline-block
+      width: 30px
+      text-align: right
+      height: 30px
+      padding: 0 5px
+      margin-top: -5px
+
+    .total
+      strong
+        font-size: 33px
+        font-family: "GothamPro-Medium", serif
+        color: $orange
+        padding: 0
+
+      span
+        color: $orange
+
+    p
+      color: $black
+      font-family: "GothamPro-Light", serif
+      font-size: 22px
+
+      strong
+        font-size: 26px
+        font-weight: normal
+        font-family: "GothamPro", serif
+        display: inline-block
+    
+      span
+        font-family: "GothamPro", serif
+        font-size: 14px
+        text-transform: uppercase
+
 
 .b_mInfo
   box-shadow: 0px 5px 5px 0px rgba(1, 1, 1, 0.33)
-  padding: 35px
+  padding: 30px 0 0
   -webkit-box-sizing: border-box
   -moz-box-sizing: border-box
   box-sizing: border-box
+  position: relative
+
+  &__title
+    font-size: 21px
+    color: $black
+    font-family: 'GothamPro', serif
+    border-bottom: 1px solid #d6d6d6
+    padding: 0 30px 20px 79px
+
+  &__content
+    padding: 20px 30px
+
+    .fri-phone
+      margin-left: 3.5px
+
+    .fri-marker
+      margin-left: 5.5px
+
+    &_phone
+      font-family: 'GothamPro', serif
+      font-size: 22px
+      text-transform: uppercase
+      color: $black
+
+      i
+        float: left
+
+      span
+        float: right
+        width: calc(100% - 49px)
+
+    &_text
+      margin-top: 35px
+      font-family: 'GothamPro', serif
+      font-size: 14px
+
+      i
+        float: left
+
+      span
+        float: right
+        width: calc(100% - 49px)
+
+      strong
+        font-family: 'GothamPro-Bold', serif
+        display: block
+
+  &__footer
+    padding: 20px 30px 10px 79px
+    background: #eaeaea
+    position: relative
+    bottom: 0
+    width: 100%
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+    p
+      font-size: 12px
+      color: $black
+
+  &__switcher
+    border-bottom: 1px solid #d6d6d6
+    padding: 20px
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    box-sizing: border-box
+
+    &_content
+      overflow: hidden
+
+      img
+        float: left
+
+      > div
+        float: right
+        width: calc(100% - 157px)
+
+    &_btns
+      text-align: right
+
+      i
+        margin-top: -4px
+
+      .uk-button
+        background: #d3d3d3
+
+        &:nth-child(2)
+          &.active
+            background: $red
+
+        &.active
+          background: $green
+
+
+    &:last-child
+      border-bottom: none
+
+  &_delivery
+    box-shadow: 0px 5px 5px 0px rgba(1, 1, 1, 0.33)
+    text-align: center
+
+    &.bg-blue
+      background: $blue
+
+    > img
+      margin: -50px auto 0
+      display: block
+
+    &__price
+      font-family: "GothamPro-Medium", serif
+      font-size: 49px
+
+      span
+        font-size: 20px
+        text-transform: uppercase
+
+    &__text
+      padding: 0 15px
+
+    &__address
+      padding: 0 15px
+
+    &__title
+      font-family: "GothamPro-Medium", serif
+      font-size: 26px
+      margin: 20px 0 40px
+
+      small
+        display: block
+        font-size: 16px
+
+    &_footer
+      list-style: none
+      font-size: 0
+      margin-top: 60px
+      padding: 0
+
+      li
+        font-size: 14px
+        font-family: "GothamPro-Medium", serif
+        display: inline-block
+
+        a
+          color: $orange
+          margin: 0 10px
+          text-decoration: none
+          border-bottom: 1px dashed
+
+        &.uk-active
+          display: none
 
 // Desktops and Tablets landscape mode
 @media only screen and (max-width: 1074px)
+  .uk-modal-close
+    position: absolute
+    right: 9px
+    top: 10px
+
   .ws__child-attract
     width: 100%
     &_info
@@ -974,6 +1207,16 @@ body
       display: block
       width: 100%
 
+  .uk-modal-dialog
+    padding: 45px 0
+
+  .b_mForm
+    padding: 20px 10px
+
+  .b_mInfo_delivery > img
+    margin: 20px auto 0
+    display: block
+
 
 @media only screen and (max-width: 501px)
   .b_footer
@@ -984,7 +1227,7 @@ body
       margin-top: 20px
 
       a
-        margin-bottom: 20px
+        margin: 0 0 20px 0
         display: inline-block
 
     &__circles
@@ -1032,15 +1275,3 @@ body
   .uk-slideset
     > li
       padding: 15px
-
-.fri-plus
-  background: url("../images/plus.png")
-  height: 24px
-  width: 24px
-  display: inline-block
-
-.fri-minus
-  background: url("../images/minus.png")
-  height: 24px
-  width: 24px
-  display: inline-block
