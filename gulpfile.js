@@ -149,6 +149,12 @@ gulp.task('build',["clean"], function(){
         gulp.src("app/fonts/**/*")
             .pipe(gulp.dest('dist/fonts'));
 
+        gulp.src("app/*.php")
+            .pipe(gulp.dest('dist/'));
+
+        gulp.src("app/*.json")
+            .pipe(gulp.dest('dist/'));
+
         gulp.src("app/images/**/*")
             .pipe(gulp.dest('dist/images'));
     }, 500);
