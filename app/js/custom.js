@@ -8,6 +8,39 @@ var allPrices = {},
 $(document).ready(function () {
     $('.phone-input').mask('+7 (000) 000-0000');
 
+    $('[data-uk-slideset]').on('show.uk.slideset', function(e){
+        var sliderContainer = $(this).find('.uk-slideset'),
+            slideHeight = sliderContainer.find('li.uk-active').outerHeight();
+
+        sliderContainer.css('height', slideHeight);
+    });
+
+    var scrollSettings = getBrowserScrollSize();
+
+    $('.uk-modal').on({
+
+        'show.uk.modal': function(){
+            $('.b_akcyi').css('padding-right', scrollSettings.width);
+        },
+
+        'hide.uk.modal': function(){
+            $('.b_akcyi').css('padding-right', 0);
+        }
+    });
+
+    $(window).scroll(function (e) {
+        var headerHeight = $('.main-header').outerHeight(),
+            documentScroll = $(document).scrollTop(),
+            blockTopFix = $('.b_akcyi');
+
+
+        if(documentScroll > headerHeight + 300) {
+            blockTopFix.addClass('active');
+        } else {
+            blockTopFix.removeClass('active');
+        }
+    });
+
     $('.b_mForm').submit(function (e) {
         e.preventDefault();
 
@@ -161,6 +194,35 @@ function insertItemPrice($price) {
 
 function updateCalcPrice($price) {
     $('#calc-price').text($price);
+}
+
+function getBrowserScrollSize(){
+
+    var css = {
+        "border":  "none",
+        "height":  "200px",
+        "margin":  "0",
+        "padding": "0",
+        "width":   "200px"
+    };
+
+    var inner = $("<div>").css($.extend({}, css));
+    var outer = $("<div>").css($.extend({
+        "left":       "-1000px",
+        "overflow":   "scroll",
+        "position":   "absolute",
+        "top":        "-1000px"
+    }, css)).append(inner).appendTo("body")
+        .scrollLeft(1000)
+        .scrollTop(1000);
+
+    var scrollSize = {
+        "height": (outer.offset().top - inner.offset().top) || 0,
+        "width": (outer.offset().left - inner.offset().left) || 0
+    };
+
+    outer.remove();
+    return scrollSize;
 }
 
 // Clear Form
