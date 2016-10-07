@@ -103,7 +103,7 @@ $(document).ready(function () {
 
         allBtns.removeClass('active');
         that.addClass('active');
-        
+
         checkDelivery(allBtns);
 
         return false;
