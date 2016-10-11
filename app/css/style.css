@@ -1009,7 +1009,7 @@ body {
   max-height: 300px;
 }
 .b_akcyi > div {
-  margin: 20px auto;
+  margin: 5px auto;
 }
 .b_akcyi_content {
   font-size: 16px;
@@ -1028,6 +1028,7 @@ body {
   border: 2px solid #fff;
   width: 200px;
   text-align: center;
+  padding: 10px 20px;
 }
 .b_akcyi .uk-button:hover {
   background: #fff;

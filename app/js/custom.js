@@ -79,6 +79,20 @@ $(document).ready(function () {
         }
     });
 
+    function now()
+    {
+        var d = new Date();
+        var month = d.getMonth()+1;
+        var day = d.getDate();
+
+        var out = (day<10 ? '0' : '') + day + "."
+            + (month<10 ? '0' : '') + month;
+
+        return out;
+    }
+
+    $('.today__day').text(now());
+
     $('[data-buy]').click(function (e) {
 
         var dataAttr = this.dataset.buy;
