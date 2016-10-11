@@ -48,7 +48,7 @@ $(document).ready(function () {
             form = e.target,
             serialized = serializeForm(form),
             url = '/mail.php',
-            infoBlock = that.closest('b_mInfo').parent(),
+            infoBlock = that.closest('.uk-modal').find('.b_mInfo'),
             infoContent = $('[data-get-info]').clone();
 
         $.post(url, serialized, function(response) {
@@ -63,8 +63,6 @@ $(document).ready(function () {
                 }, 3000);
             }
         });
-
-        return false;
     });
 
     $.get('/prices.json', function (data) {
