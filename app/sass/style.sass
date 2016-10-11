@@ -127,18 +127,60 @@ body
   top: 60px
 
 .uk-slidenav-previous
-  +sprite(arrow-left)
+  //+sprite(arrow-left)
   left: 0!important
   display: inline-block
 
   &::before
     content: ''
+    display: block
+    width: 16px
+    height: 16px
+    border-left: 2px solid #FF6816
+    border-top: 2px solid #FF6816
+    box-sizing: border-box
+    top: 50%
+    left: 0
+    position: absolute
+    transform: translateY(-50%) rotate(-45deg)
+
+  &::after
+    content: ''
+    display: block
+    width: 40px
+    height: 2px
+    background: #FF6816
+    transform: translateY(-50%)
+    top: 50%
+    left: -2px
+    position: absolute
 
 .uk-slidenav-next
-  +sprite(arrow-right)
-  right: 0!important
+  //+sprite(arrow-right)
+  right: 0 !important
   &::before
     content: ''
+    display: block
+    width: 16px
+    height: 16px
+    border-right: 2px solid #FF6816
+    border-bottom: 2px solid #FF6816
+    box-sizing: border-box
+    top: 50%
+    right: 0
+    position: absolute
+    transform: translateY(-50%) rotate(-45deg)
+    
+  &::after
+    content: ''
+    display: block
+    width: 40px
+    height: 2px
+    background: #FF6816
+    transform: translateY(-50%)
+    top: 50%
+    right: -2px
+    position: absolute
 
 .uk-slideset
   margin-top: 40px
@@ -866,11 +908,13 @@ body
     font-size: 16px
     width: calc(100% - 234px)
     display: inline-block
+    vertical-align: middle
 
   &_button
     width: 204px
     margin-left: 30px
     display: inline-block
+    vertical-align: middle
     font-size: 16px
 
   .uk-button
@@ -884,6 +928,9 @@ body
     &:hover
       background: $white
       color: $orange
+
+  p
+    margin-bottom: 0
 
   @media screen and (max-width: 767px)
     p

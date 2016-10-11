@@ -236,34 +236,60 @@ body {
 }
 
 .uk-slidenav-previous {
-  background-image: url('../images/icons-sb1bbe950e7.png');
-  background-position: 0 0;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: middle;
-  height: 25px;
-  width: 40px;
   left: 0 !important;
   display: inline-block;
 }
 .uk-slidenav-previous::before {
   content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-left: 2px solid #FF6816;
+  border-top: 2px solid #FF6816;
+  box-sizing: border-box;
+  top: 50%;
+  left: 0;
+  position: absolute;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.uk-slidenav-previous::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #FF6816;
+  transform: translateY(-50%);
+  top: 50%;
+  left: -2px;
+  position: absolute;
 }
 
 .uk-slidenav-next {
-  background-image: url('../images/icons-sb1bbe950e7.png');
-  background-position: 0 -30px;
-  background-repeat: no-repeat;
-  overflow: hidden;
-  display: inline-block;
-  vertical-align: middle;
-  height: 25px;
-  width: 39px;
   right: 0 !important;
 }
 .uk-slidenav-next::before {
   content: "";
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-right: 2px solid #FF6816;
+  border-bottom: 2px solid #FF6816;
+  box-sizing: border-box;
+  top: 50%;
+  right: 0;
+  position: absolute;
+  transform: translateY(-50%) rotate(-45deg);
+}
+.uk-slidenav-next::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #FF6816;
+  transform: translateY(-50%);
+  top: 50%;
+  right: -2px;
+  position: absolute;
 }
 
 .uk-slideset {
@@ -1015,11 +1041,13 @@ body {
   font-size: 16px;
   width: calc(100% - 234px);
   display: inline-block;
+  vertical-align: middle;
 }
 .b_akcyi_button {
   width: 204px;
   margin-left: 30px;
   display: inline-block;
+  vertical-align: middle;
   font-size: 16px;
 }
 .b_akcyi .uk-button {
@@ -1033,6 +1061,9 @@ body {
 .b_akcyi .uk-button:hover {
   background: #fff;
   color: #ff6816;
+}
+.b_akcyi p {
+  margin-bottom: 0;
 }
 @media screen and (max-width: 767px) {
   .b_akcyi p {
