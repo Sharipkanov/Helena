@@ -50,9 +50,15 @@ $(document).ready(function () {
             url = '/mail.php';
 
         $.post(url, serialized, function(response) {
-            console.log(typeof response);
             if(response === '1') {
-                $('.uk-modal-close.uk-close').click();
+                var h3 = "<h3 class='b_mForm__title'><span class='--text-upper'>Спасибо, Ваш заказ получен.</span></h3>",
+                    p = "<p>Наш менеджер свяжется с Вами в течение 30 минут, ежедневно с 10:00 до 21:00</p>";
+
+
+                that.html(h3 + p);
+                setTimeout(function () {
+                    $('.uk-modal-close.uk-close').click();
+                }, 3000);
             }
         });
 
