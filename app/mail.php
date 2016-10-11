@@ -18,7 +18,7 @@ if(isset($_POST['fullname'])) {
         $message .= $delivery . $build . $product . $count . $totalPrice;
     }
 
-    $from_email = 'yurabogatyrenko@gmail.com'; //sender email
+    $from_email = 'no-repeat@helena-wall.ru'; //sender email
     $recipient_email = 'yurabogatyrenko@gmail.com'; //recipient email
     $subject = $_POST['name']; //subject of email
 
