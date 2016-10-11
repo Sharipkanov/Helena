@@ -51,14 +51,14 @@ $(document).ready(function () {
 
         $.post(url, serialized, function(response) {
             if(response === '1') {
-                var h3 = "<h3>Спасибо, Ваш заказ получен.</h3>",
+                var h3 = "<h3 class='b_mForm__title'><span class='--text-upper'>Спасибо, Ваш заказ получен.</span></h3>",
                     p = "<p>Наш менеджер свяжется с Вами в течение 30 минут, ежедневно с 10:00 до 21:00</p>";
 
 
                 that.html(h3 + p);
                 setTimeout(function () {
                     $('.uk-modal-close.uk-close').click();
-                }, 3000)
+                }, 3000);
             }
         });
 
