@@ -55,12 +55,12 @@ $(document).ready(function () {
             if(response === '1') {
                 var h3 = "<h3 class='b_mForm__title'><span class='--text-upper'>Спасибо, Ваш заказ получен.</span></h3>",
                     p = "<p class='uk-text-center'>Наш менеджер свяжется с Вами в течение 30 минут, ежедневно с 10:00 до 21:00</p>";
-
+                infoBlock.empty();
                 infoBlock.html(infoContent);
                 that.html(h3 + p);
-                setTimeout(function () {
-                    $('.uk-modal-close.uk-close').click();
-                }, 3000);
+                // setTimeout(function () {
+                //     $('.uk-modal-close.uk-close').click();
+                // }, 3000);
             }
         });
     });
