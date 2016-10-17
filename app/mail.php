@@ -19,7 +19,8 @@ if(isset($_POST['fullname'])) {
     }
 
     $from_email = 'no-repeat@helena-wall.ru'; //sender email
-    $recipient_email = 'yurabogatyrenko@gmail.com'; //recipient email
+    // $recipient_email = 'yurabogatyrenko@gmail.com'; //recipient email
+    $recipient_email = 'na@yasno.mobi'; //recipient email
     $subject = $_POST['name']; //subject of email
 
 
