@@ -8,6 +8,17 @@ var allPrices = {},
 $(document).ready(function () {
     $('.phone-input').mask('+7 (000) 000-0000');
 
+    $('[data-uk-modal]').click(function (e) {
+        var that = $(this),
+            dataBuy = that.data('buy');
+
+        if(dataBuy !== 'undefined') {
+            $(that.attr('href')).on('show.uk.modal', function (e) {
+                $(this).find('button[type="submit"]').addClass('buy-' + dataBuy);
+            });
+        }
+    });
+
     $('[data-uk-slideset]').on('show.uk.slideset', function(e){
         var sliderContainer = $(this).find('.uk-slideset'),
             slideHeight = sliderContainer.find('li.uk-active').outerHeight();

@@ -98,6 +98,10 @@ strong {
   color: #fff;
 }
 
+[class*="--text-main-color"] {
+  color: #3e3e3e !important;
+}
+
 [class*="--text-black"] {
   color: #000;
 }
@@ -161,6 +165,10 @@ strong {
 
 [class*="--text-normal"] {
   text-transform: none !important;
+}
+
+[class*="--text-larger"] {
+  font-size: 22px !important;
 }
 
 .uk-container {
