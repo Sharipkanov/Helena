@@ -13,13 +13,13 @@ $(document).ready(function () {
             dataBuy = that.data('buy');
 
         if(dataBuy !== 'undefined') {
-            $(that.attr('href')).on({
+            var modal = $(that.attr('href'));
+            modal.on({
                 'show.uk.modal': function(){
-                    $(this).find('button[type="submit"]').addClass('buy-' + dataBuy);
+                    modal.find('button[type="submit"]').attr('class', 'uk-button uk-button-primary buy-' + dataBuy);
                 },
-
                 'hide.uk.modal': function(){
-                    $(this).find('button[type="submit"]').removeClass('buy-' + dataBuy);
+                    modal.find('button[type="submit"]').attr('class', 'uk-button uk-button-primary');
                 }
             });
         }
