@@ -59,14 +59,14 @@ $(document).ready(function () {
             form = e.target,
             serialized = serializeForm(form),
             url = '/mail.php',
-            infoBlock = that.closest('.uk-modal').find('.b_mInfo').parent(),
+            infoBlock = $('[data-submit-change]'),
             infoContent = $('[data-get-info]').clone();
 
         $.post(url, serialized, function(response) {
             if(response === '1') {
                 var h3 = "<h3 class='b_mForm__title'><span class='--text-upper'>Спасибо, Ваш заказ получен.</span></h3>",
                     p = "<p class='uk-text-center'>Наш менеджер свяжется с Вами в течение 30 минут, ежедневно с 10:00 до 21:00</p>";
-                if(infoBlock.data('submit-change') !== 'undefined') infoBlock.html(infoContent);
+                infoBlock.html(infoContent);
                 that.html(h3 + p);
                 // setTimeout(function () {
                 //     $('.uk-modal-close.uk-close').click();
