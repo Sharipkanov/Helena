@@ -13,8 +13,14 @@ $(document).ready(function () {
             dataBuy = that.data('buy');
 
         if(dataBuy !== 'undefined') {
-            $(that.attr('href')).on('show.uk.modal', function (e) {
-                $(this).find('button[type="submit"]').addClass('buy-' + dataBuy);
+            $(that.attr('href')).on({
+                'show.uk.modal': function(){
+                    $(this).find('button[type="submit"]').addClass('buy-' + dataBuy);
+                },
+
+                'hide.uk.modal': function(){
+                    $(this).find('button[type="submit"]').removeClass('buy-' + dataBuy);
+                }
             });
         }
     });
